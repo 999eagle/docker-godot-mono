@@ -1,6 +1,6 @@
-FROM 999eagle/godot-mono-build-server AS build-server
-FROM 999eagle/godot-mono-build-templates:x11_64_debug AS build-template-x11-64-debug
-FROM 999eagle/godot-mono-build-templates:x11_64_release AS build-template-x11-64-release
+FROM 999eagle/docker-godot-build-server AS build-server
+FROM 999eagle/docker-godot-build-templates:x11_64_debug AS build-template-x11-64-debug
+FROM 999eagle/docker-godot-build-templates:x11_64_release AS build-template-x11-64-release
 
 FROM ubuntu:18.04
 
