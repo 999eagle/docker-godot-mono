@@ -4,8 +4,6 @@ FROM 999eagle/docker-godot-build-templates:x11_64_release AS build-template-x11-
 
 FROM ubuntu:18.04
 
-LABEL mantainer="Sophie Tauchert <sophie@999eagle.moe>"
-
 RUN apt-get update && \
 	apt-get -y upgrade
 
@@ -18,6 +16,8 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03280
 	apt-get -y install mono-complete
 
 ARG GODOT_VERSION=3.0.6
+
+LABEL mantainer="Sophie Tauchert <sophie@999eagle.moe>"
 
 COPY --from=build-server /build/godot-src/src/bin/godot_server.server.opt.tools.64.mono /build/godot
 COPY --from=build-server /build/godot-src/src/bin/GodotSharpTools.dll /build/
